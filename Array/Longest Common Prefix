@@ -1,3 +1,6 @@
+Hint - Here, I try to match the first character of first word with the remaining words of list. 
+       And same with second character and so on.
+
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         st = ""
