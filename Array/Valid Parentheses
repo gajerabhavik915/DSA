@@ -1,6 +1,6 @@
-Hint - First, I will go through each and every parantheses, if any parenthese belongs to open (e.x.  {[(  ), i will transfer them in a separate list.
-       And for the remaining ( e.x. )}]  ) I will try to match same shape of parenthese in list, if it's found, I will remove it from list.
-       On the final step, if there is no element in list, given parenthese are valid. Otherwise not.
+#Hint - First, I will go through each and every parantheses, if any parenthese belongs to open (e.x.  {[(  ), i will transfer them in a separate list.
+#      And for the remaining ( e.x. )}]  ) I will try to match same shape of parenthese in list, if it's found, I will remove it from list.
+#      On the final step, if there is no element in list, given parenthese are valid. Otherwise not.
        
 class Solution:
     def isValid(self, s: str) -> bool:
