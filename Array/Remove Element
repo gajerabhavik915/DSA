@@ -1,1 +1,8 @@
-
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        a = 0                 #pointer to rearrange nums
+        for b in nums:        # fetching values from nums
+            if b != val:      # if num's element is not equal to val, it will reset that element on the pointer position.
+                nums[a] = b   
+                a += 1        # after resetting element, it will increase the count of pointer 
+        return a         
