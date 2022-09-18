@@ -1,1 +1,11 @@
-
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        min = prices[0]                                # first, I will consider the first element as minimum stock price.
+        maxpro = 0                                     # And profit on the first day Zero.
+        for i in range(len(prices)):                   # Here, i will fetch all element one by one and will check with their consecutive element.
+            if min >= prices[i]:                       # if consecutive element will be smaller, that value will become our min value.  
+                min = prices[i]
+            else:                                      # Or if consecutive element is not small, it will be sunstracted from the min value. if the substracted  
+                if maxpro < (-min + prices[i]):          value bigger than maxPro, it will be considered as the max profit.
+                    maxpro = -min + prices[i]
+        return (maxpro)
