@@ -1,1 +1,13 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        dict1 = dict()                                   # created empty dictionary 
+        b = 1                                            # as a pointer
+        for a1 in nums:                                  # Here, I will fetch each element from list and will check whether is in dictionary or not. 
+            if a1 not in dict1.keys():                   # if not, I will add that element as keys and will give value 1
+                 dict1[a1] = b
+            else:
+                 dict1[a1] = b+1                         # or if previously added element appears again in list, the value of that key element will be incresed by 1 
 
+        for keys, values in dict1.items():               # after constracting entire dict, i will fetch only that key where value is still 1 ( mean appears only one )
+            if values == 1:
+                return (keys)
