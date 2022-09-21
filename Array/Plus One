@@ -1,1 +1,16 @@
+# here, time complexcity is O(n) and for memory,it is O(1).
 
+
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        a1 = len(digits) - 1                   # asign pointer at the last element of digits.
+        while a1 >= 0:                         # Loop will run untill pointer will get out of bound
+            if digits[a1] != 9:                # if last element is not 9, that element will be incresed by 1.
+                digits[a1] = digits[a1]+1  
+                return digits                  # and will stop the loop
+            else:                              # if it's 9, that element will be converted into 0 and will check for the previous element and so on.
+                digits[a1] = 0
+                a1 = a1-1 
+        digits.insert(0,1)                     # if all element inside digits found 9 ( e.x. = [9,9,9] ), it will convert all element into 0 by else condition and 
+        return digits                            and will add 1 on the first position ( e.x. = [1,0,0,0] ).
+        
