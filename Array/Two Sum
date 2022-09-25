@@ -1,1 +1,14 @@
+#Hint - First I will define Dictionry(Dict1), I will substract one by one value of list from the target.
+#      And try to find the answer of substraction into dictionary.
+#      If it is not present in dict1, i will add value which i used for substraction. 
 
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dict1 = dict()
+        for a in range(len(nums)):
+            main_value = target - nums[a]
+            if main_value in dict1:
+                return [dict1[main_value], a]
+            else:
+                dict1[nums[a]] = a
