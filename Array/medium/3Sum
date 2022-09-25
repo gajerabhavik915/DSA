@@ -1,1 +1,22 @@
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()                                            #first sorted the entire list.
+        list1 = []                                             #created list
+        for index, a in enumerate(nums):                       #run loop with enumerate to get the index with element 
+            if index > 0 and a == nums[index-1]:               #cheching with previous element to skip if it is same.
+                continue 
+            else:
+                left = index + 1                               #pointer 
+                right = len(nums)-1
+                while left < right:                            #loop will execute untill left pointer cross right
+                    if nums[left] + nums[right] == -a:         #when if condition satisfied, all three element will be appended into empty list.
+                        list1.append([a,nums[left],nums[right]])
+                        left = left + 1                        # and will check for remaining list by increasing left poiter 
+                        while nums[left] == nums[left -1] and left < right:
+                            left = left + 1                    # when two left pointer get same, it will again increase by one, will check again 
+                    elif nums[left] + nums[right] < -a:        # if sum of two pointer is less than ' a ', will increase left pointer.
+                        left = left + 1
+                    elif nums[left] + nums[right] > -a:        # if sum of two pointer is greater than ' a ', will increase right pointer.
+                        right = right - 1
 
+        return (list1)
