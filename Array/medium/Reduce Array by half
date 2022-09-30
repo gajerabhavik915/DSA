@@ -1,1 +1,29 @@
+class Solution:
+    def minSetSize(self, nums: List[int]) -> int:
+        # count = 1
+        # nums.sort()
+        dict1 = dict()                               
+        for a in (nums):                              
+            if a not in dict1.keys():                 
+                dict1[a] = 1
+            else:
+                dict1[a] = dict1[a] + 1
 
+        # print(dict1)
+        list1 = list(dict1.values())
+        list1.sort(reverse=True)
+        # print(list1)
+
+
+        mea = 0
+        for a in range(len(list1)) :
+            if list1[a] >= len(nums)//2:
+                return 1
+                
+            elif mea >= len(nums)//2:
+                return a 
+                
+                # mea = 0
+                # set1 = set1.clear()
+            else:
+                mea = mea + list1[a]
