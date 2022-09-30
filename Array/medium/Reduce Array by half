@@ -2,21 +2,21 @@ class Solution:
     def minSetSize(self, nums: List[int]) -> int:
         # count = 1
         # nums.sort()
-        dict1 = dict()                               
-        for a in (nums):                              
-            if a not in dict1.keys():                 
-                dict1[a] = 1
+        dict1 = dict()                               #created dictionary to count each element of nums
+        for a in (nums):                             #fetching each element 
+            if a not in dict1.keys():                #if element not in dictionary, add into dictionary with value 1.   
+                dict1[a] = 1    
             else:
-                dict1[a] = dict1[a] + 1
+                dict1[a] = dict1[a] + 1              #if already present, value will be increased by 1
 
         # print(dict1)
-        list1 = list(dict1.values())
-        list1.sort(reverse=True)
+        list1 = list(dict1.values())                 #due to need of values, converted entire dictionary to list
+        list1.sort(reverse=True)                     #sorted newly converted list.
         # print(list1)
 
 
-        mea = 0
-        for a in range(len(list1)) :
+        mea = 0                                      #checking for count of each elements. if it's greater than or equal to half of entire nums, it will 
+        for a in range(len(list1)) :                  be considered as the minimum count of nums.
             if list1[a] >= len(nums)//2:
                 return 1
                 
