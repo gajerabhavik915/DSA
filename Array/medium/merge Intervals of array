@@ -1,1 +1,11 @@
-
+class Solution:
+    def merge(self, interval: List[List[int]]) -> List[List[int]]:
+        # interval = [[1,2],[5,6],[15,16],[8,10],[11,16]]
+        interval.sort(key=lambda i : i[0])                        # array can be in any order, so first sort it.
+        list1 = [interval[0]]                                     # create list with first internal list of interval 
+        for a in range(1,len(interval)):                          # run loop from second internal list to last one.
+            if list1[-1][1] < interval[a][0]:                     # checking whether first element of internal list is greater than the element, present in newly list1.
+                list1.append(interval[a])                         # if it is, directly append that internal list into newly list1.
+            else:                                                 
+                list1[-1][1] = max(interval[a][1],list1[-1][1])   # if it is not, then last element of last internal list of newly list1 will be set with max value.
+        return (list1)
