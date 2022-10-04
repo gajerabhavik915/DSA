@@ -1,13 +1,13 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        set1 = set()
-        start = 0
-        res = 0
-        for end in range(len(s)):
-            while s[end] in set1:
-                set1.remove(s[start])
+        set1 = set()                                     #created set to add unique element.
+        start = 0                                        # strat is a pointer
+        res = 0    
+        for end in range(len(s)):                        #fetching values from 's'.
+            while s[end] in set1:                        #if element is present in set, it will remove all value till the element.
+                set1.remove(s[start])                       
                 start = start + 1
-            set1.add(s[end])
-            res = max(res,(end - start + 1))
+            set1.add(s[end])                             #if it is not in set, that element will be added.
+            res = max(res,(end - start + 1))             #res will be updated according to Longest character.
 
         return (res)
