@@ -1,1 +1,16 @@
-
+class Solution:
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        dummy = ListNode()                       # created dummy Node. In case, first element's value became same with given value.
+        pre = dummy                              # gave the name as pre( previous )
+        curr = head                              # pointer
+        pre.next = curr                          # join dummy Node with head
+        while curr:
+            nxt = curr.next                      # take one more pointer ahead current pointer
+            if curr.val != val:                  # if curr. node's value does not match with given value, pre. pointer and curr. pointer will move ahead
+                pre = curr                           
+                curr = nxt                        
+            else:                               # if given value become similar, curr node will be skiped.
+                pre.next = nxt                  # and pre. pointer will direct point to nxt. pointer.
+                curr = nxt                      # and nxt pointer will be converted to curr pointer.
+                
+        return dummy.next                       
