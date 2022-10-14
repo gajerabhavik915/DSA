@@ -24,4 +24,3 @@ class Solution:
         odd.next = even_head                        # Once entire loop will be executed, the last Odd Node will be attached with even Node. 
         return head                                 # And will return Head of Linked List.
             
-            
