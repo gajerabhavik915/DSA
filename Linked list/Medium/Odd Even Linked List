@@ -1,27 +1,27 @@
 class Solution:
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if head is None:                                   
+        if head is None:                    # if there is no any node or head then it will return empty Node.
             return head
-        elif head.next is None:
+        elif head.next is None:             # if only one head is present, it will return only head of the linked list.
             return head
-        
-        odd = head
-        even = head.next 
-        even_head = head.next
-        # if even.next is None:
+                                            # Let's suppose, we have more than two Nodes in linked list.
+        odd = head                          # pointer for odd Node.
+        even = head.next                    # Even is a pointer for even Node. 
+        even_head = head.next               # this pointer will be used to connect with the last odd Node.
+        # if even.next is None:      
         #     return head
-        while odd.next.next and even.next.next:
-            odd.next = None
-            odd.next = even.next 
-            odd = even.next 
-            even.next = None
-            even.next = odd.next 
+        while odd.next.next and even.next.next:     # Odd and Even will only move forward when there next to next element are present.
+            odd.next = None                         # first break the connection with second next Node. 
+            odd.next = even.next                    # then after join first Node with third Node through second.next pointer. 
+            odd = even.next                         # And move odd pointer on next third Node. 
+            even.next = None                        # same has been done with even Node.
+            even.next = odd.next                   
             even = odd.next
-        if even.next is not None:   
-            odd.next = even.next
-            odd = even.next
+        if even.next is not None:                   # if linked list has even number of Node then loop will successfully execute.
+            odd.next = even.next                    # But if it has odd number of Nodes, last odd node will remain to execute. For this reason, I have to give saparate  
+            odd = even.next                           condition.
             even.next = None
-        odd.next = even_head
-        return head
+        odd.next = even_head                        # Once entire loop will be executed, the last Odd Node will be attached with even Node. 
+        return head                                 # And will return Head of Linked List.
             
             
