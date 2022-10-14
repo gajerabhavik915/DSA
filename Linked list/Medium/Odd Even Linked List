@@ -1,1 +1,27 @@
-
+class Solution:
+    def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head is None:                                   
+            return head
+        elif head.next is None:
+            return head
+        
+        odd = head
+        even = head.next 
+        even_head = head.next
+        # if even.next is None:
+        #     return head
+        while odd.next.next and even.next.next:
+            odd.next = None
+            odd.next = even.next 
+            odd = even.next 
+            even.next = None
+            even.next = odd.next 
+            even = odd.next
+        if even.next is not None:   
+            odd.next = even.next
+            odd = even.next
+            even.next = None
+        odd.next = even_head
+        return head
+            
+            
