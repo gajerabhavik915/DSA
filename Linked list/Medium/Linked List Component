@@ -1,1 +1,18 @@
-
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def numComponents(self, head: Optional[ListNode], nums: List[int]) -> int:
+        output = 0
+        set1 = set(nums)
+        joint = False
+        while head:
+            if head.val in set1 and joint == False:
+                joint = True 
+                output = output + 1
+            elif head.val not in set1 and joint == True:
+                joint = False 
+            head = head.next 
+        return output 
