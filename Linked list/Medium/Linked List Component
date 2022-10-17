@@ -5,14 +5,14 @@
 #         self.next = next
 class Solution:
     def numComponents(self, head: Optional[ListNode], nums: List[int]) -> int:
-        output = 0
-        set1 = set(nums)
-        joint = False
-        while head:
-            if head.val in set1 and joint == False:
-                joint = True 
-                output = output + 1
-            elif head.val not in set1 and joint == True:
-                joint = False 
-            head = head.next 
-        return output 
+        output = 0                                           # output for counting the component 
+        set1 = set(nums)                                     # nums converted to set, since set is faster than list.
+        joint = False                                        # flag 
+        while head:                                          # loop will get execute untill head is present 
+            if head.val in set1 and joint == False:          # if head present in nums and flag is false
+                joint = True                                 # Flag will be converted to True.
+                output = output + 1                          # output is increased by 1.
+            elif head.val not in set1 and joint == True:     # if it's not present in nums.
+                joint = False                                # 
+            head = head.next                                 # head will be forwared ahead.
+        return output                                        
