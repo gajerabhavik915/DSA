@@ -1,3 +1,25 @@
+(Java Solution)  (100% Time and 84.40% Memory efficient)
+
+
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode mean = head;
+        ListNode last = head;
+        
+        while (last != null && last.next != null){
+            mean = mean.next;
+            last = last.next.next;
+        }
+        return mean;
+    }
+}
+
+
+
+
+
+(Python Solution)
+
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         mean = head                                         # mean and last, both are two pointers of head
