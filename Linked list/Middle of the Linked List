@@ -1,9 +1,9 @@
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        mean = head
+        mean = head                                         # mean and last, both are two pointers of head
         last = head
-        while last is not None and last.next is not None:
-            mean =mean.next 
-            last = last.next.next 
+        while last is not None and last.next is not None:   # loop will get execute untill, last pointer and last.next is exist.
+            mean =mean.next                                 # mean will forward one step 
+            last = last.next.next                           # last will forward two times at a time.
         
         return mean
