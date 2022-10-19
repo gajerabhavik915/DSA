@@ -1,1 +1,9 @@
-
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        mean = head
+        last = head
+        while last is not None and last.next is not None:
+            mean =mean.next 
+            last = last.next.next 
+        
+        return mean
