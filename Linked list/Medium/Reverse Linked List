@@ -1,26 +1,26 @@
 class Solution:
         def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
             dummy = ListNode(0)                            # created dummy node to handle edge cases 
-            dummy.next = head                              
-            head1 = dummy 
-            r = right-left+1
-            count_l = 1
-            left1 = head
-            while left1 and count_l < left:
-                count_l = count_l + 1
-                left1 = left1.next
-                head1 = head1.next 
-            left2 = left1
-            pre = None
-            for i in range(r):    
-                temp = left1.next
+            dummy.next = head                              # attached dummy node to head of linked list                               
+            head1 = dummy                                  # head1 is pointer 
+            r = right-left+1                               # defined r to run loop untill the range over.
+            count_l = 1                                    
+            left1 = head                                   # head noted as left1 
+            while left1 and count_l < left:                # left1 will be moved ahead untill count become greater than or equal to left
+                count_l = count_l + 1                      # increasing counting 
+                left1 = left1.next                         # moving left1 pointer 
+                head1 = head1.next                         # head1 is pointer of dummy node. it will help to give next pointer to required node.
+            left2 = left1                                  # and also save left1 pointer with pointer named left2 which will help to point on required node.
+            pre = None                                    
+            for i in range(r):                              
+                temp = left1.next                          # applied same logic of reverse linked list 
                 left1.next = pre
                 pre = left1
                 left1 = temp
 
-            head1.next = pre
-            left2.next = left1
+            head1.next = pre                               # At the end, head1 attached with the pre node. 
+            left2.next = left1                                and left2 with left1.
 
 
-            return dummy.next
+            return dummy.next                 
 
