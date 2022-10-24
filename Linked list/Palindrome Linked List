@@ -1,1 +1,33 @@
-
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:       
+   
+       # this soltion is memory efficient 
+        slow,faster =head, head                   # slow and faster are pointer of head
+        
+        while faster and faster.next:             # loop will get execute untill faster and its next node is present.
+            slow = slow.next                     
+            faster = faster.next.next             # this way slow pointer will reach to middle element 
+        
+        pre = None                                # Behind middle node, all nodes will be converted to reverse.
+        # curr = slow 
+        while slow:
+            temp = slow.next 
+            slow.next = pre
+            pre = slow
+            slow = temp                           # after changing direction pre pointer will reach to last element. 
+            
+        left, right = head, pre                   # So, now we have two pointer, first on head and second on last. And our linked list will look like 
+        while left and right:                       ( --> --> --> <-- <-- <--).
+            if left.val != right.val:             # Now, we will check all element through both node and will come to middle point.
+                return False 
+            left = left.next 
+            right = right.next 
+        else:
+            return True                           # if all node's value same on left and right side, it will True otherwise, False.
+             
+        
