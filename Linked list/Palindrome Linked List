@@ -29,5 +29,29 @@ class Solution:
             right = right.next 
         else:
             return True                           # if all node's value same on left and right side, it will True otherwise, False.
+            
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool: 
+ # This solution is time efficient   
+        l = str()                    #first, created empty string. 
+        curr = head                  #give pointer to head
+        while curr:                    
+            l = l+str(curr.val)      #Then, I add all node's values to str 
+            curr = curr.next         
+        #l = [1,2,3,4]   
+        if l == l[::-1]:            # check, entire str with reversed str, if str are same, it will return True otherwise False 
+            return True
+        else:
+            return False
+            
+            
+            
              
         
