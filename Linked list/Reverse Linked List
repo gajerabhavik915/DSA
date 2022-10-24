@@ -14,3 +14,4 @@ class Solution:
             prev = curr                       # and prev will become curr
             curr = nex                        # and curr will take the position of nex and so on.
         return prev                           
+
