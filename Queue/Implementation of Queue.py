@@ -33,3 +33,53 @@ queue.add_element(4)
 queue.print_queue()
 queue.pop_left()
 queue.print_queue()
+
+
+
+
+
+
+
+
+# method 2 - Queue using Linkedlist
+
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+class Linkedlist:
+
+    def __init__(self,val):
+        node = Node(val)
+        self.head = node
+        self.tail = node
+        self.len = 1
+
+    def print(self):
+        temp = self.head
+        while temp:
+            print(temp.val)
+            temp = temp.next
+
+    def append(self,val):
+        node = Node(val)
+        self.tail.next = node
+        self.tail = node
+        self.len += 1
+
+    def pop(self):
+        temp = self.head.next
+        self.head.next = None
+        self.head = temp
+        self.len -= 1
+
+linkedlist = Linkedlist(1)
+# linkedlist.print()
+linkedlist.append(2)
+linkedlist.append(3)
+linkedlist.append(4)
+linkedlist.append(5)
+# linkedlist.print()
+linkedlist.pop()
+linkedlist.print()
