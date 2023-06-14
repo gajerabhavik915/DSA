@@ -24,9 +24,33 @@ class Stack:
 
 
 stack1 = Stack()
-print(stack1.add_element(5))
+stack1.add_element(0)
+stack1.add_element(1)
 stack1.add_element(2)
+stack1.add_element(3)
 print(stack1.print())
 print(stack1.pop())
 print(stack1.print())
+
+
+
+
+#view of stack
+# --        --
+#   |   3  |
+#   |   2  |
+#   |   1  |
+#   |   0  |
+#   --------
+    
+    
+# --       --
+#   |      |
+#   |   2  |
+#   |   1  |
+#   |   0  |
+#   --------
+
+
+
 
