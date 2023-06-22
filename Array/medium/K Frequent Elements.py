@@ -1,3 +1,7 @@
+# this algorithm is same as the leetcode for top K frequent element
+# this algorithm runs for printing list that can have k or more than k element in given list(nums)
+
+# time complexity of below algorithm will be o(n) time complexity.
 
 
 # nums = [1,1,1,2,2,3,1,1,2,2,5,6,3,3]
