@@ -1,4 +1,4 @@
-
+# O(n) time complexity  
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -21,5 +21,5 @@ class Solution:
             if node.right:
                 queue.append(node.right)
 
-        print(count)
+        # print(count)
         return count
