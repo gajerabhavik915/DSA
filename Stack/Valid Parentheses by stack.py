@@ -1,4 +1,5 @@
-
+# we will push open parentheses in stack and when we get any close, will try to match in stack.pop . 
+# if it's match then it will be poped up from stack or else will return false.
 class Solution:
     def isValid(self, s: str) -> bool:
         stack=[]
