@@ -1,3 +1,7 @@
+# User function Template for python3
+
+# This is from GeeksForGeeks.
+# Function to return a list containing the level order traversal in spiral form.
 
 def findSpiral(root):
     if root is None:
